@@ -1,18 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+const pageHeading="Are we there yet?"
+const btnColor = "#900000";
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<h1>Hey there</h1>
+		<h1>{pageHeading}</h1>
 		<a href="/about/">Check this out</a>
 		<a href="/blog/">Dont Check this out</a>
 	</main>
 </Layout>
 
-<style>
-	body {
+<style define:vars={{btnColor}}>
+	main {
 		margin: auto;
 		padding: 1rem;
 		width: 800px;
@@ -82,9 +84,10 @@ import Card from "../components/Card.astro";
 		color: #ffffff; /* White color */
 		text-decoration: none; /* Remove underline */
 		font-weight: bold; /* Make the text bold */
-		background-color: #c3c3c3; /* Add a background color */
+		border-color: #e4e4e4; /* Add a background color */
 		padding: 10px 20px; /* Add padding */
 		border-radius: 5px; /* Rounded corners */
+		border: 1px solid #e4e4e4;
 		text-align: center; 
 		transition:
 			background-color 0.3s,
@@ -93,16 +96,19 @@ import Card from "../components/Card.astro";
 	}
 
 	a:hover {
-		background-color: #45a049; /* Slightly darker green on hover */
+		border:1px solid var(--btnColor);
 		color: #e0e0e0; /* Slightly grayish white on hover */
 	}
 
 	a:active {
-		background-color: #3e8e41; /* Even darker green on click */
+		background-color: #000000; /* Even darker green on click */
+		border:1px solid var(--btnColor);
 		color: #d4d4d4; /* Slightly darker grayish white on click */
 	}
 
-	a:visited {
-		color: #ffffff; /* Ensure visited links remain white */
+	
+
+	@media (max-width:500px) {
+		
 	}
 </style>
