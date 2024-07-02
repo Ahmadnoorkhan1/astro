@@ -1,0 +1,81 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout title="Blog Posts">
+    <main class="container">
+        <section class="blog-post">
+            <h2>Blog Post Title 1</h2>
+            <p class="date">June 27, 2024</p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                efficitur, nisl sit amet dignissim luctus, leo libero tempor ligula,
+                a cursus odio justo non nunc.
+            </p>
+            <a href="#">Read more</a>
+        </section>
+        <section class="blog-post">
+            <h2>Blog Post Title 2</h2>
+            <p class="date">June 26, 2024</p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                efficitur, nisl sit amet dignissim luctus, leo libero tempor ligula,
+                a cursus odio justo non nunc.
+            </p>
+            <a href="#">Read more</a>
+        </section>
+        <section class="blog-post">
+            <h2>Blog Post Title 3</h2>
+            <p class="date">June 25, 2024</p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                efficitur, nisl sit amet dignissim luctus, leo libero tempor ligula,
+                a cursus odio justo non nunc.
+            </p>
+            <a href="#">Read more</a>
+        </section>
+    </main>
+    <style>
+        .container{
+            padding: 3.5rem;
+        }
+
+        .blog-post {
+            background-color: #e4e4e4;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        .blog-post h2 {
+            margin-top: 0;
+        }
+    
+        .blog-post .date {
+            color: #777;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+    
+        .blog-post p {
+            line-height: 1.6;
+        }
+    
+        .blog-post a {
+            color: #e4e4e4;
+            text-decoration: none;
+            font-weight: bold;
+            background-color: #4caf50;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition:
+                background-color 0.3s,
+                color 0.3s;
+        }
+    
+        .blog-post a:hover {
+            background-color: #45a049;
+            color: #e0e0e0;
+        }
+    </style>
+</Layout>

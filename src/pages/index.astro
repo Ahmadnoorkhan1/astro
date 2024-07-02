@@ -1,12 +1,14 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-	<body>
+	<main>
 		<h1>Hey there</h1>
-	</body>
+		<a href="/about/">Check this out</a>
+		<a href="/blog/">Dont Check this out</a>
+	</main>
 </Layout>
 
 <style>
@@ -18,8 +20,12 @@ import Card from '../components/Card.astro';
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
 	}
-	h1{
+	h1 {
 		color: white;
 	}
 	.astro-a {
@@ -48,7 +54,10 @@ import Card from '../components/Card.astro';
 	.instructions {
 		margin-bottom: 2rem;
 		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		background: linear-gradient(
+			rgba(var(--accent-dark), 66%),
+			rgba(var(--accent-dark), 33%)
+		);
 		padding: 1.5rem;
 		border-radius: 8px;
 	}
@@ -68,5 +77,32 @@ import Card from '../components/Card.astro';
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 2rem;
 		padding: 0;
+	}
+	a {
+		color: #ffffff; /* White color */
+		text-decoration: none; /* Remove underline */
+		font-weight: bold; /* Make the text bold */
+		background-color: #c3c3c3; /* Add a background color */
+		padding: 10px 20px; /* Add padding */
+		border-radius: 5px; /* Rounded corners */
+		text-align: center; 
+		transition:
+			background-color 0.3s,
+			color 0.3s; /* Smooth transition for hover effect */
+		margin: 10px 0px;
+	}
+
+	a:hover {
+		background-color: #45a049; /* Slightly darker green on hover */
+		color: #e0e0e0; /* Slightly grayish white on hover */
+	}
+
+	a:active {
+		background-color: #3e8e41; /* Even darker green on click */
+		color: #d4d4d4; /* Slightly darker grayish white on click */
+	}
+
+	a:visited {
+		color: #ffffff; /* Ensure visited links remain white */
 	}
 </style>
