@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import "../globals.css"
 import Card from "../components/Card.astro";
 const pageHeading="Are we there yet?"
 const btnColor = "#900000";
@@ -19,16 +20,15 @@ const btnColor = "#900000";
 		padding: 1rem;
 		width: 800px;
 		max-width: calc(100% - 2rem);
-		color: white;
 		font-size: 20px;
 		line-height: 1.6;
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
 		align-items: center;
+		height: 100vh;
 	}
 	h1 {
-		color: white;
 	}
 	.astro-a {
 		position: absolute;
@@ -81,7 +81,6 @@ const btnColor = "#900000";
 		padding: 0;
 	}
 	a {
-		color: #ffffff; /* White color */
 		text-decoration: none; /* Remove underline */
 		font-weight: bold; /* Make the text bold */
 		border-color: #e4e4e4; /* Add a background color */
