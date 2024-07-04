@@ -1,5 +1,22 @@
-@import "https://fonts.googleapis.com/css?family=Press%20Start%202P";
-*{
+@font-face {
     font-family: 'Press Start 2P';
-    color:#fff090;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/pressstart2p/v14/e3t4euO8T-267oIAQAu6jDQyK3nVivM.woff2) format('woff2');
+  }
+*{
+    font-family: 'Press Start 2P', cursive !important;
+    color: #fff090;
 }
+
+.hamburger {
+    padding-right: 20px;
+    cursor: pointer;
+  }
+  
+  .hamburger .line {
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin-bottom: 10px;
+    background-color: #ff9776;
+  }
