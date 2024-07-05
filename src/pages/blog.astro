@@ -1,78 +1,38 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "../globals.css"
+import BlogPost from "../components/BlogPost.astro";
+const allPosts = await Astro.glob('./posts/*.md');
+const data = [
+    {
+        title:'My Astro Learning Blog',
+        date:"July 2, 2024",
+        description:"My Astro Learning Blog",
+        Button:"Read more"
+    },
+    {
+        title:'My Second Blog Post',
+        date:"June 26, 2024",
+        description:" After a successful first week learning Astro, I decided to try some more. I wrote and imported a small component from memory!",
+        Button:"Read more"
+    },
+    {
+        title:'My Third Blog Post',
+        date:"June 25, 2024",
+        description:" I had some challenges, but asking in the community really helped!",
+        Button:"Read more"
+    }
+]
 ---
 <Layout title="Blog Posts">
     <main class="container">
-        <section class="blog-post">
-            <h2>My Astro Learning Blog</h2>
-            <p class="date">July 2, 2024</p>
-            <p>
-                My Astro Learning Blog
-            </p>
-            <a href="/posts/posts-1/">Read more</a>
-        </section>
-        <section class="blog-post">
-            <h2>My Second Blog Post</h2>
-            <p class="date">June 26, 2024</p>
-            <p>
-                After a successful first week learning Astro, I decided to try some more. I wrote and imported a small component from memory!
-            </p>
-            <a href="/posts/posts-2/">Read more</a>
-        </section>
-        <section class="blog-post">
-            <h2>My Third Blog Post</h2>
-            <p class="date">June 25, 2024</p>
-            <p>
-                I had some challenges, but asking in the community really helped!
-            </p>
-            <a href="/posts/posts-3/">Read more</a>
-        </section>
+        {
+            allPosts.map((blog,index)=><BlogPost data={data} index={index} blog={blog}/>)
+        }
     </main>
-    <style>
-        .container {
-            padding: 3.5rem;
-        }
-
-        .blog-post {
-            background-color: #333333;
-            margin-bottom: 20px;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease-in-out; /* Smooth transition for any changes */
-        }
-
-        .blog-post h2 {
-            margin-top: 0;
-            font-size: 1.5rem; /* Ensure heading size is consistent */
-        }
-
-        .blog-post .date {
-            color: #777;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-
-        .blog-post p {
-            line-height: 1.6;
-        }
-
-        .blog-post a {
-            text-decoration: none;
-            font-weight: bold;
-            background-color: #4caf50;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition:
-                background-color 0.3s,
-                color 0.3s;
-            display: inline-block; /* Ensure consistent button size */
-        }
-
-        .blog-post a:hover {
-            background-color: #45a049;
-            color: #e0e0e0;
-        }
-    </style>
 </Layout>
+<style>
+    .container {
+        padding: 3.5rem;
+    }
+</style>
