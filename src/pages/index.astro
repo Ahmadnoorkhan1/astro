@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import "../globals.css"
 import Card from "../components/Card.astro";
+import Greeting from "../components/Greetings";
 const pageHeading="Are we there yet?"
 const btnColor = "#900000";
 ---
@@ -11,6 +12,7 @@ const btnColor = "#900000";
 		<h1>{pageHeading}</h1>
 		<a href="/about/">Check this out</a>
 		<a href="/blog/">Dont Check this out</a>
+		<Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
 	</main>
 </Layout>
 
